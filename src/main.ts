@@ -2,7 +2,7 @@ import "reflect-metadata";
 //AUTO-IMPORT-DOTENV
 import "dotenv/config";
 import express from "express";
-import { initializeDatabase } from "./Infrastructure/database/initializeDatabase";
+// import { initializeDatabase } from "./Infrastructure/database/initializeDatabase";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
@@ -34,9 +34,7 @@ app.use(express.json());
 app.use(
 	"/api-docs",
 	apiReference({
-		content: {
-			content: OpenApiSpecification
-		},
+		content: OpenApiSpecification
 	})
 );
 //AUTO-REGISTER-ROUTES
@@ -56,7 +54,7 @@ app.use("/role", roleRoutes);
 app.use("/user", userRoutes);
 
 async function startServer() {
-  await initializeDatabase();
+//   await initializeDatabase();
 
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
