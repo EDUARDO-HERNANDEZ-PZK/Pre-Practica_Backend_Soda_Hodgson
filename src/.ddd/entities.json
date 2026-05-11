@@ -1,0 +1,507 @@
+{
+  "models": [
+    {
+      "name": "User",
+      "fields": [
+        {
+          "name": "role_id",
+          "type": "string"
+        },
+        {
+          "name": "username",
+          "type": "string"
+        },
+        {
+          "name": "password_hash",
+          "type": "string"
+        },
+        {
+          "name": "create_at",
+          "type": "Date"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Role",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "RolePermiso",
+      "fields": [
+        {
+          "name": "role_id",
+          "type": "string"
+        },
+        {
+          "name": "permission_id",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Permission",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Cash_Sessions",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "string"
+        },
+        {
+          "name": "open_time",
+          "type": "Date"
+        },
+        {
+          "name": "close_time",
+          "type": "Date"
+        },
+        {
+          "name": "opening_balance",
+          "type": "number"
+        },
+        {
+          "name": "closing_balance_real",
+          "type": "number"
+        },
+        {
+          "name": "expected_closing_balance",
+          "type": "number"
+        },
+        {
+          "name": "cash_difference",
+          "type": "number"
+        },
+        {
+          "name": "status",
+          "type": "sting"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Daily_expense",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "amount",
+          "type": "number"
+        },
+        {
+          "name": "expense_time",
+          "type": "Date"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Table",
+      "fields": [
+        {
+          "name": "table_number",
+          "type": "number"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Measurement_units",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "abbreviation",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Conversions",
+      "fields": [
+        {
+          "name": "from_uni_id",
+          "type": "string"
+        },
+        {
+          "name": "to_unit_id",
+          "type": "string"
+        },
+        {
+          "name": "conversion_factor",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "string"
+        },
+        {
+          "name": "table_id",
+          "type": "string"
+        },
+        {
+          "name": "user_creator_id",
+          "type": "string"
+        },
+        {
+          "name": "ruc_number",
+          "type": "string"
+        },
+        {
+          "name": "sale_time",
+          "type": "Date"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Sales_details",
+      "fields": [
+        {
+          "name": "sale_id",
+          "type": "string"
+        },
+        {
+          "name": "product_id",
+          "type": "string"
+        },
+        {
+          "name": "quantity",
+          "type": "number"
+        },
+        {
+          "name": "unit_price",
+          "type": "number"
+        },
+        {
+          "name": "subtotal",
+          "type": "number"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Voided_sales_log",
+      "fields": [
+        {
+          "name": "sale_id",
+          "type": "string"
+        },
+        {
+          "name": "reason",
+          "type": "string"
+        },
+        {
+          "name": "voided_time",
+          "type": "Date"
+        },
+        {
+          "name": "user_voided",
+          "type": "number"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "fields": [
+        {
+          "name": "category_id",
+          "type": "string"
+        },
+        {
+          "name": "unit_id",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "price_sell",
+          "type": "number"
+        },
+        {
+          "name": "stock_current",
+          "type": "number"
+        },
+        {
+          "name": "stock_min",
+          "type": "number"
+        },
+        {
+          "name": "createdAt",
+          "type": "Date"
+        },
+        {
+          "name": "updatedAt",
+          "type": "Date"
+        },
+        {
+          "name": "createdBy",
+          "type": "string"
+        },
+        {
+          "name": "updatedBy",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "databaseProvider": "turso"
+}
