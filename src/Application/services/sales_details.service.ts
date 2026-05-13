@@ -79,9 +79,9 @@ export class Sales_detailsService implements ISales_detailsService {
     const newData: Sales_details = {
       ...data,
       id,
-      createdAt: now,
+      createdAt: existing.createdAt,
       updatedAt: now,
-      createdBy: "system",
+      createdBy: existing.createdBy,
       updatedBy: "system",
     };
     await this._sales_detailsRepository.update(newData);
@@ -90,9 +90,23 @@ export class Sales_detailsService implements ISales_detailsService {
 
   async delete(id: string): Promise<void> {
     const existing = await this._sales_detailsRepository.findById(id);
+
     if (!existing) {
       return;
     }
+
+    const product = await this._productsRepository.findById(existing.product_id);
+    
+    // Restaurar stock al eliminar detalle de la factura
+    //por ejemplo cuando se agrega un producto por error y lo borras la fila del registro
+    if (product) {
+      product.stock_current += existing.quantity;
+      product.updatedAt = new Date();
+      product.updatedBy = "system";
+
+      await this._productsRepository.update(product);
+    }
+
     return await this._sales_detailsRepository.delete(existing);
   }
 }
