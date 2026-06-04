@@ -8,7 +8,7 @@ export default class Cash_Sessions extends BaseModel {
   closing_balance_real: number;
   expected_closing_balance: number;
   cash_difference: number;
-  status: sting;
+  status: string;
   createdAt: Date;
   updatedAt: Date;
   createdBy: string;
@@ -37,7 +37,7 @@ export default class Cash_Sessions extends BaseModel {
     closing_balance_real: number;
     expected_closing_balance: number;
     cash_difference: number;
-    status: sting;
+    status: string;
     createdAt: Date;
     updatedAt: Date;
     createdBy: string;
