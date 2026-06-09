@@ -20,12 +20,23 @@ import permissionRoutes from "./WebApi/routes/permission.routes";
 import rolepermisoRoutes from "./WebApi/routes/rolepermiso.routes";
 import roleRoutes from "./WebApi/routes/role.routes";
 import userRoutes from "./WebApi/routes/user.routes";
+import cors from "cors";
 //AUTO-IMPORT-OPENAPI
 import { apiReference } from "@scalar/express-api-reference";
 import { OpenApiSpecification } from "./WebApi/docs/openapi";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
