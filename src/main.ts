@@ -31,12 +31,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //AUTO-REGISTER-OPENAPI
-app.use(
-	"/api-docs",
-	apiReference({
-		content: OpenApiSpecification
-	})
-);
+app.get("/api-docs", async (req, res, next) => {
+  try {
+    const scalar = await import("@scalar/express-api-reference");
+
+    const middleware = scalar.apiReference({
+      content: OpenApiSpecification,
+    }) as express.RequestHandler;
+
+    return middleware(req, res, next);
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get("/", (req, res) => {
+  res.send("Soda Hudson System API working!");
+});
+
+
 //AUTO-REGISTER-ROUTES
 app.use("/products", productsRoutes);
 app.use("/voided_sales_log", voided_sales_logRoutes);
@@ -53,12 +66,14 @@ app.use("/rolepermiso", rolepermisoRoutes);
 app.use("/role", roleRoutes);
 app.use("/user", userRoutes);
 
-async function startServer() {
-//   await initializeDatabase();
+// async function startServer() {
+// //   await initializeDatabase();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+//   app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+//   });
+// }
 
-startServer();
+// startServer();
+
+export default app;
