@@ -8,6 +8,8 @@ export default class Products extends BaseModel {
   price_sell: number;
   stock_current: number;
   stock_min: number;
+  stock_expired: number;
+  stock_damaged: number;
   createdAt: Date;
   updatedAt: Date;
   createdBy: string;
@@ -22,6 +24,8 @@ export default class Products extends BaseModel {
     price_sell,
     stock_current,
     stock_min,
+    stock_expired,
+    stock_damaged,
     createdAt,
     updatedAt,
     createdBy,
@@ -35,6 +39,8 @@ export default class Products extends BaseModel {
     price_sell: number;
     stock_current: number;
     stock_min: number;
+    stock_expired: number;
+    stock_damaged: number;
     createdAt: Date;
     updatedAt: Date;
     createdBy: string;
@@ -48,6 +54,8 @@ export default class Products extends BaseModel {
     this.price_sell = price_sell;
     this.stock_current = stock_current;
     this.stock_min = stock_min;
+    this.stock_expired = stock_expired;
+    this.stock_damaged = stock_damaged;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.createdBy = createdBy;

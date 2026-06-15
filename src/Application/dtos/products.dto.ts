@@ -5,5 +5,7 @@ export interface ProductsDto {
   description: string;
   price_sell: number;
   stock_current: number;
+  stock_expired: number;
+  stock_damaged: number;
   stock_min: number;
 }
