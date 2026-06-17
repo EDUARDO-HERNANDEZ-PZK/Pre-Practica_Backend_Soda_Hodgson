@@ -237,6 +237,8 @@ export class EntitiesService implements IEntitiesService {
             new SqlColumnSettings("DESCRIPTION", "description", false),
             new SqlColumnSettings("PRICE_SELL", "price_sell", false),
             new SqlColumnSettings("STOCK_CURRENT", "stock_current", false),
+            new SqlColumnSettings("STOCK_EXPIRED", "stock_expired", false),
+            new SqlColumnSettings("STOCK_DAMAGED", "stock_damaged", false),
             new SqlColumnSettings("STOCK_MIN", "stock_min", false),
             new SqlColumnSettings("CREATEDAT", "createdAt", false),
             new SqlColumnSettings("UPDATEDAT", "updatedAt", false),

@@ -15,7 +15,11 @@ export const ProductsSchemas = {
       
         "stock_current",
       
-        "stock_min"
+        "stock_min",
+
+        "stock_expired",
+      
+        "stock_damaged"
       
     ],
     properties: {
@@ -33,6 +37,10 @@ export const ProductsSchemas = {
       stock_current: { type: "number" },
       
       stock_min: { type: "number" },
+
+      stock_expired: { type: "number" },
+      
+      stock_damaged: { type: "number" },
       
     }
   },
@@ -55,6 +63,9 @@ export const ProductsSchemas = {
       stock_current: { type: "number" },
       
       stock_min: { type: "number" },
+      stock_expired: { type: "number" },
+      
+      stock_damaged: { type: "number" },
       
       createdAt: { type: "string", format: "date-time" },
       updatedAt: { type: "string", format: "date-time" }
